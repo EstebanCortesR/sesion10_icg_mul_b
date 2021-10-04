@@ -1,0 +1,33 @@
+<canvas id='canvas' width=1800 height=1800>
+<script>
+
+function polygon(a, colorBorde, colorRelleno) {    
+
+  ctx.beginPath()
+  ctx.strokeStyle = colorBorde
+  ctx.fillStyle = colorRelleno
+  ctx.moveTo(a[0],a[1])
+  for (i=2; i < a.length; i+=2)
+    ctx.lineTo(a[i],a[i+1]);
+  ctx.closePath()
+  ctx.stroke()
+  ctx.fill()
+   
+}
+
+
+
+ var canvas = document.getElementById('canvas')
+  var ctx = canvas.getContext('2d');
+  //ctx. lineWidth=30
+
+ ctx.beginPath(); 
+         ctx.strokeStyle = 'orange';
+         ctx.moveTo(286,169);
+         ctx.lineTo(309,160);
+         ctx.stroke();
+polygon ([137,97,375,97,376,268,135,268], 'rgba(0,162,232)', 'rgba(0,162,232)')
+polygon ([624,87,723,182,624,274,524,182], '#A333FF','#A333FF')
+
+
+</script> 
