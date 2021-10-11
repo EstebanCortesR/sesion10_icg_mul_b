@@ -1,0 +1,50 @@
+<input type=text size=1 id='tx'/>
+<button onclick='main()'>Ejecutar</button>
+<canvas id='rectangulos'width=600 height=1500></canvas> 
+<script>
+
+function color(r, g, b) {
+return 'rgba(' + r*2.55 + ',' + g*2.55 + ',' + b*2.55 + ')'
+}
+function main(){
+
+var canvas = document.getElementById('rectangulos')
+var ctx = canvas.getContext('2d');
+		
+//Se conecta el "<input type=text size=20 id='tx'/>" para que ejecute la orden dada a traves de este comando
+var a = parseInt(document.getElementById('tx').value)
+        
+//Ciclo for general que tiene como función manejar el color del rectángulo y la cantidad de rectángulos creados//
+for( j=0 ; j<3 ; j++ ){
+//ciclo for para manejar cantidad de los rectangulos
+for( i=0 ; i<a ; i++ ){
+//Ciclo de la fila monocromática de color azul
+if(j==1){
+
+ctx.fillStyle=color(100*(a-i)/a,0,0)
+     
+}
+//Ciclo de la fila monocromatica  de color rojo
+else if(j==0){
+
+ctx.fillStyle=color(0,0,100*(a-i)/a )
+
+
+//Ciclo de la fila monocromatica verde	
+}
+else if(j==2){
+
+ctx.fillStyle=color(0,100*(a-i)/a,0)
+					
+                    
+}
+
+ctx.fillRect( j*205 , i*970/a, 200 , 970/a )
+}
+}
+}       
+
+                    
+                    
+// A través del anterior ciclo, el programa se encarga de crear los rectangulos, las 2 primeras variables tiene como finalidad determinar la posición de los rectangulos en (x,y), la variable 3 se encarga de darle un ancho especifico al rectángulo, y finalmente la variable 4 determina el alto del rectángulo*/
+</script>			
